@@ -39,7 +39,6 @@ def init():
 	except:
 		print('\nPlease do not use spaces or special characters')
 		init()
-	try:
 
 	print('\nPeriod = %f, Save Directory = %s') % (period, save_dir)
 
