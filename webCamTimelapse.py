@@ -32,6 +32,7 @@ def init():
 		for i in range(0,len(special_chars)):
 			
 			if name.find(special_chars[i]) != -1:
+				print(i)
 				raise Exception('Invalid name')
 
 		save_dir = save_dir + '/' + name
