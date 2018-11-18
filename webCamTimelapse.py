@@ -9,3 +9,7 @@
 #
 
 import time
+
+print('Hey there buddy! I\'m going to wait for 5 sec and then tell you something...')
+time.sleep(5)
+print('\nI like turtles')
