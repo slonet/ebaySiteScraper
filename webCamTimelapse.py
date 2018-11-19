@@ -25,7 +25,7 @@ def init():
 
 	except:
 		print('\nPlease enter a number')
-		init():
+		init()
 
 	try:
 		save_dir = input('Please enter the save directory with quotes: ')
@@ -33,7 +33,7 @@ def init():
 
 	except:
 		print('\nPlease enter a valid directory')
-		init():
+		init()
 
 	print('\nPeriod = %f, Save Directory = %s') % (period, save_dir)
 
