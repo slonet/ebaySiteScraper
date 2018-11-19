@@ -35,8 +35,16 @@ def init():
 		print('\nPlease enter a valid directory')
 		init()
 
-	printString = '\nPeriod = %f, Save Directory = %s' % (period, save_dir)
+def runTimelapse():
+	while(True):
+		try:
+			#Take photo
+			print('Successfully captured image. Next image in ' + str(period/60) + ' minutes')
+		
+		except:
+			print('Could not capture image')
 
-	print(printString)
+		time.sleep(period)
 
 init()
+runTimelapse()
