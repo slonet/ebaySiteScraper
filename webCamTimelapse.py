@@ -35,6 +35,8 @@ def init():
 		print('\nPlease enter a valid directory')
 		init()
 
-	print('\nPeriod = %f, Save Directory = %s') % (period, save_dir)
+	printString = '\nPeriod = %f, Save Directory = %s' % (period, save_dir)
+
+	print(printString)
 
 init()
