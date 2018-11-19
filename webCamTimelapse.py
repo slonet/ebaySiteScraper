@@ -8,41 +8,33 @@
 # 11/17/2018
 #
 
+import argparse
 import time
 from subprocess import call
 
-save_dir = '/media/pi/FLASH_DRIVE'
+save_dir = ''
 period = None
 
 ### Set up the timelapse capture
 def init():
-	try:
-		global period
+	global period
+	global save_dir
+	
+	try:	
 		period = float(input('Please enter a timelapse period in minutes: '))*60
 
 	except:
-		print('\nPlease enter a positive number...')
-		init()
-
-	global save_dir
-	special_chars = [['.'],[' '],['~'],['\\'],['/'],[','],[';'],[':'],['|'],['`']]
-	name = input('Please name the timelapse set: ')
+		print('\nPlease enter a number')
+		init():
 
 	try:
-		for i in range(0,len(special_chars)):
-			
-			if name.find(special_chars[i]) != -1:
-				print(i)
-				raise Exception('Invalid name')
-
-		save_dir = save_dir + '/' + name
+		save_dir = input('Please enter the save directory with quotes: ')
+		call('mkdir', save_dir)
 
 	except:
-		print('\nPlease do not use spaces or special characters')
-		init()
+		print('\nPlease enter a valid directory')
+		init():
 
 	print('\nPeriod = %f, Save Directory = %s') % (period, save_dir)
-
-
 
 init()
