@@ -29,7 +29,7 @@ def init():
 
 	try:
 		save_dir = input('Please enter the save directory with quotes: ')
-		call('mkdir', save_dir)
+		call(['mkdir', save_dir])
 
 	except:
 		print('\nPlease enter a valid directory')
