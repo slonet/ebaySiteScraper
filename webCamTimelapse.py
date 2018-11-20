@@ -47,15 +47,19 @@ def captueImage():
 
 	if s:
 		cv2.imwrite('testImage.jpg',img)
+	
+	else:
+		print('\nCould not capture image')
+
 
 def runTimelapse():
 	while(True):
 		try:
-			#Take photo
+			captureImage()
 			print('Successfully captured image. Next image in ' + str(period/60) + ' minutes')
 		
 		except:
-			print('Could not capture image')
+			print('\nCould not capture image')
 
 		time.sleep(period)
 
