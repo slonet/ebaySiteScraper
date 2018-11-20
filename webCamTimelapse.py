@@ -36,12 +36,12 @@ def init():
 		print('\nPlease enter a valid directory')
 		init()
 
-def captureImage():
+def captureImage(name_str):
 	cam = cv2.VideoCapture(0)
 	s, img = cam.read()
 	
 	current_time = datetime.datetime.now()
-	stamp = current_time.strftime('%Y-%m-%d_%H-%m')
+	stamp = current_time.strftime('%Y-%m-%d_%H-%m') + name_str
 	img_dir = save_dir + '/' + stamp + '.jpg'
 	print(img_dir)
 	cv2.imwrite(img_dir,img)
@@ -57,7 +57,7 @@ def runTimelapse():
 	img_no = 0
 
 	while(True):
-		captureImage(str(img_no))
+		captureImage('_image_' + str(img_no))
 		print('Successfully captured image. Next image in ' + str(period/60) + ' minutes')
 		time.sleep(period)
 		img_no = img_no + 1
