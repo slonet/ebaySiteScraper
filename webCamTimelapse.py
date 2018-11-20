@@ -13,28 +13,29 @@ import time
 import datetime
 from subprocess import call
 
-save_dir = ''
-period = None
+#save_dir = ''
+save_dir = '/media/pi/FLASH_DRIVE/pee-wee'
+period = 15
 
 ### Set up the timelapse capture
 def init():
-	global period
-	global save_dir
+	#global period
+	#global save_dir
 	
-	try:	
-		period = float(input('Please enter a timelapse period in minutes: '))*60
+	#try:	
+	#	period = float(input('Please enter a timelapse period in minutes: '))*60
 
-	except:
-		print('\nPlease enter a number')
-		init()
+	#except:
+	#	print('\nPlease enter a number')
+	#	init()
 
 	try:
-		save_dir = input('Please enter the save directory with quotes: ')
+	#	save_dir = input('Please enter the save directory with quotes: ')
 		call(['mkdir', save_dir])
 
 	except:
 		print('\nPlease enter a valid directory')
-		init()
+	#	init()
 
 def captureImage(name_str):
 	cam = cv2.VideoCapture(0)
