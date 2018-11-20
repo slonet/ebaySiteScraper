@@ -54,15 +54,13 @@ def captureImage():
 
 
 def runTimelapse():
-	while(True):
-		#try:
-		captureImage()
-		print('Successfully captured image. Next image in ' + str(period/60) + ' minutes')
-		
-		#except:
-		#	print('\nCould not capture image')
+	img_no = 0
 
+	while(True):
+		captureImage(str(img_no))
+		print('Successfully captured image. Next image in ' + str(period/60) + ' minutes')
 		time.sleep(period)
+		img_no = img_no + 1
 
 init()
 runTimelapse()
