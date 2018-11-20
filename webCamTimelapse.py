@@ -36,7 +36,7 @@ def init():
 		print('\nPlease enter a valid directory')
 		init()
 
-def captueImage():
+def captureImage():
 	cam = cv2.VideoCapture(0)
 	s, img = cam.read()
 	
