@@ -41,8 +41,7 @@ def captureImage():
 	s, img = cam.read()
 	
 	current_time = datetime.datetime.now()
-	stamp = current_time.strftime('%Y-%m-%d_%H:%m')
-
+	stamp = current_time.strftime('%Y-%m-%d_%H-%m')
 	img_dir = save_dir + '/' + stamp + '.jpg'
 	print(img_dir)
 	cv2.imwrite(img_dir,img)
