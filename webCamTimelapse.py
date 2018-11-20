@@ -8,8 +8,9 @@
 # 11/17/2018
 #
 
-import argparse
+import cv2
 import time
+import datetime
 from subprocess import call
 
 save_dir = ''
@@ -34,6 +35,18 @@ def init():
 	except:
 		print('\nPlease enter a valid directory')
 		init()
+
+def captueImage():
+	cam = cv2.VideoCapture(0)
+	s, img = cam.read()
+	
+	current_time = datetime.datetime.now()
+	stamp = current_time.strftime('%Y-%m-%d_%H:%m')
+
+	img_dir = save_dir + '/' + stamp + '.jpg'
+
+	if s:
+		cv2.imwrite('testImage.jpg',img)
 
 def runTimelapse():
 	while(True):
