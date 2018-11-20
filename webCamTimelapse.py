@@ -15,7 +15,7 @@ from subprocess import call
 
 #save_dir = ''
 save_dir = '/media/pi/FLASH_DRIVE/pee-wee'
-period = 15
+period = 15*60
 
 ### Set up the timelapse capture
 def init():
@@ -44,7 +44,7 @@ def captureImage(name_str):
 	current_time = datetime.datetime.now()
 	stamp = current_time.strftime('%Y-%m-%d_%H-%m') + name_str
 	img_dir = save_dir + '/' + stamp + '.jpg'
-	print(img_dir)
+	#print(img_dir)
 	cv2.imwrite(img_dir,img)
 
 	if s:
@@ -59,7 +59,7 @@ def runTimelapse():
 
 	while(True):
 		captureImage('_image_' + str(img_no))
-		print('Successfully captured image. Next image in ' + str(period/60) + ' minutes')
+		#print('Successfully captured image. Next image in ' + str(period/60) + ' minutes')
 		time.sleep(period)
 		img_no = img_no + 1
 
